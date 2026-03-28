@@ -31,8 +31,7 @@ phases:
       # - ssh ec2-user@<EC2_PUBLIC_IP> "docker pull 799619129003.dkr.ecr.ca-central-1.amazonaws.com/flask-app:latest && docker stop flask-app || true && docker rm flask-app || true && docker run -d -p 80:5000 --name flask-app 799619129003.dkr.ecr.ca-central-1.amazonaws.com/flask-app:latest"
       # Terraform Deployment
       - echo Deploying Terraform infrastructure
-      - cd infra
+      - cd Infra
       - terraform init
       - terraform plan -out=tfplan
       - terraform apply -auto-approve tfplan
-  
